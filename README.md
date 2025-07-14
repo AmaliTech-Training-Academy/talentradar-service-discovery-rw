@@ -1,0 +1,1 @@
+# talentradar-service-discovery-rw
