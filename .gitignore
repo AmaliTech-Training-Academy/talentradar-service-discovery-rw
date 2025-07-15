@@ -34,3 +34,6 @@ build/
 
 ## Environment
 .env
+# Log files
+git_repo_manager_*.log
+*.log
