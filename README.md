@@ -1,1 +1,1 @@
-# talentradar-service-discovery-rw
+# talentradar-service-discovery-rwanda
