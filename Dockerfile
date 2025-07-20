@@ -30,9 +30,7 @@ ARG SPRING_APPLICATION_NAME
 ARG SPRING_CLOUD_CONFIG_URI
 ENV SERVER_PORT=${SERVER_PORT} \
     SPRING_APPLICATION_NAME=${SPRING_APPLICATION_NAME} \
-    SPRING_CLOUD_CONFIG_URI=${SPRING_CLOUD_CONFIG_URI} \
-    SPRING_PROFILES_ACTIVE=production \
-    HOSTNAME=service-discovery
+    SPRING_CLOUD_CONFIG_URI=${SPRING_CLOUD_CONFIG_URI}
 
 # Create a non-root user
 RUN useradd -r -u 1001 -g root serviceuser
@@ -45,7 +43,7 @@ COPY --from=builder --chown=serviceuser:root /build/target/*.jar ./application.j
 # Configure container
 USER 1001
 # Expose the service discovery port
-EXPOSE 8086
+EXPOSE 8761
 
 # Use the standard JAR execution
 ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-XX:MaxRAMPercentage=75.0", "-Djava.security.egd=file:/dev/./urandom", "-jar", "application.jar"]
