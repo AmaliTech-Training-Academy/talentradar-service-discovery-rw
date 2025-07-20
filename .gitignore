@@ -30,10 +30,12 @@ build/
 !**/src/test/**/build/
 
 ### VS Code ###
-.vscode/
 
 ## Environment
 .env
 # Log files
 git_repo_manager_*.log
 *.log
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
